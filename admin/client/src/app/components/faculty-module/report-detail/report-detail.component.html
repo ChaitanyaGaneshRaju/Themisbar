@@ -1,0 +1,31 @@
+<div class="sticky">
+  <h1 class="page-header">Report Detail</h1>
+  <label class="bold">Download CSV </label><cds-icon class="bold" shape="download"></cds-icon>
+</div>
+<div class="limit-height">
+  <clr-datagrid>
+    <clr-dg-column [clrDgField]="'name'">Name</clr-dg-column>
+    <clr-dg-column [clrDgField]="'email'">Email</clr-dg-column>
+    <clr-dg-column [clrDgField]="'phone'">Phone</clr-dg-column>
+    <clr-dg-column [clrDgField]="'numberrange'">Number Range</clr-dg-column>
+    <clr-dg-column [clrDgField]="'alphanumeric'">Alphanumeric</clr-dg-column>
+
+    <clr-dg-placeholder>We couldn't find any users!</clr-dg-placeholder>
+
+    <clr-dg-row *clrDgItems="let user of users">
+      <clr-dg-cell>{{user.name}}</clr-dg-cell>
+      <clr-dg-cell>{{user.email}}</clr-dg-cell>
+      <clr-dg-cell>{{user.phone}}</clr-dg-cell>
+      <clr-dg-cell>{{user.numberrange}}</clr-dg-cell>
+      <clr-dg-cell>{{user.alphanumeric}}</clr-dg-cell>
+    </clr-dg-row>
+
+    <clr-dg-footer>
+      <clr-dg-pagination #pagination [clrDgPageSize]="50">
+        <clr-dg-page-size [clrPageSizeOptions]="[10,20,50,75]">Users per page</clr-dg-page-size>
+        {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+        of {{pagination.totalItems}} users
+      </clr-dg-pagination>
+    </clr-dg-footer>
+  </clr-datagrid>
+</div>

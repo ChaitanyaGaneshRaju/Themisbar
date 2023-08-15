@@ -1,1 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+* {
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0) !important;
+  -webkit-focus-ring-color: rgba(255, 255, 255, 0) !important;
+  outline: none !important;
+}
+
+.color-white {
+  color: white !important;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  background-color: var(--clr-global-app-background);
+  z-index: 5000;
+}
+
+
+.page-header {
+  margin-top: var(--cds-token-space-size-5,.4rem);
+  margin-bottom: var(--cds-token-space-size-7,.8rem)
+}

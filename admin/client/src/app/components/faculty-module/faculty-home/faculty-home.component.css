@@ -1,0 +1,13 @@
+.faculty-nav{
+  background-color: #0072a3;
+}
+
+.logout {
+  border-top: 1px solid #ccc;
+  border-width: var(--clr-vertical-nav-trigger-divider-border-width, 0.0rem);
+}
+
+.content-area{
+  padding-top: 0px !important;
+}
+

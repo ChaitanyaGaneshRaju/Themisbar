@@ -1,0 +1,61 @@
+<div class="main-container">
+  <!-- <div class="alert alert-app-level alert-info" role="alert">
+    <div class="alert-items">
+      <div class="alert-item static">
+        <div class="alert-icon-wrapper">
+          <cds-icon class="alert-icon" shape="exclamation-circle"></cds-icon>
+        </div>
+        <div class="alert-text">
+          Alert Type: Danger
+        </div>
+        <div class="alert-actions">
+          <button class="btn alert-action">Action</button>
+        </div>
+      </div>
+    </div>
+    <button type="button" class="close" aria-label="Close">
+      <cds-icon aria-hidden="true" shape="close"></cds-icon>
+    </button>
+  </div> -->
+  <div class="content-container">
+    <div class="content-area">
+      <router-outlet></router-outlet>
+    </div>
+    <clr-vertical-nav class="bold">
+      <div class="clr-row clr-align-items-center text-center clr-justify-content-center"
+        style="padding-bottom: 0.9rem;">
+        <div class="clr-col">
+          <img src="/assets/img/Themisbar_logo_2.png" width="75%" />
+        </div>
+      </div>
+      <a clrVerticalNavLink routerLinkActive="active" routerLink="./report-detail">
+        <cds-icon shape="clipboard" clrVerticalNavIcon></cds-icon>
+        Report Detail
+      </a>
+      <a clrVerticalNavLink routerLinkActive="active" routerLink="./credit">
+        <cds-icon shape="mcq-performance-icon" clrVerticalNavIcon></cds-icon>
+        MCQ Perfromance
+      </a>
+      <a clrVerticalNavLink routerLinkActive="active" routerLink="./credit">
+        <cds-icon shape="mcq-api-icon" clrVerticalNavIcon></cds-icon>
+        MCQ API
+      </a>
+      <a clrVerticalNavLink routerLinkActive="active" routerLink="./credit">
+        <cds-icon shape="graded-essays-icon" clrVerticalNavIcon></cds-icon>
+        Graded Essays
+      </a>
+      <a clrVerticalNavLink routerLinkActive="active" routerLink="./credit">
+        <cds-icon shape="practice-exams-icon" clrVerticalNavIcon></cds-icon>
+        Practice Exams
+      </a>
+      <a clrVerticalNavLink routerLinkActive="active" routerLink="./credit">
+        <cds-icon shape="users" clrVerticalNavIcon></cds-icon>
+        Individula view
+      </a>
+      <a class="mt-auto logout" clrVerticalNavLink routerLinkActive="active" routerLink="./credit">
+        <cds-icon shape="logout" clrVerticalNavIcon></cds-icon>
+        Logout
+      </a>
+    </clr-vertical-nav>
+  </div>
+</div>

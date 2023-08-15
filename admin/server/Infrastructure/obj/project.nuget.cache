@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "Ini0799mTdZIhTgEEKfKOYMr64g4VYA1RcBM60BSo70RcciCeLHtKJd5YBKHaAE+I1yghzSiUfXj3fcOY2QeMQ==",
+  "dgSpecHash": "iP/3srX055EJyM+JL/SythmMtu22TzEd5zb7qQ3Atd6Z9xlB/rTrpxBK9PV/mlSBccB9tk0yUqvgsp/xPEPbYw==",
   "success": true,
-  "projectFilePath": "d:\\Learning stuff\\Themisbar\\admin\\server\\Infrastructure\\Infrastructure.csproj",
+  "projectFilePath": "D:\\Learning stuff\\Themisbar\\admin\\server\\Infrastructure\\Infrastructure.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\csarikonda\\.nuget\\packages\\microsoft.aspnetcore.authentication\\2.2.0\\microsoft.aspnetcore.authentication.2.2.0.nupkg.sha512",
     "C:\\Users\\csarikonda\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

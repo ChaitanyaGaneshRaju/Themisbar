@@ -13,6 +13,8 @@ namespace API.Helpers
 		public MappingProfiles()
 		{
 			CreateMap<User, UserLearnerDto>();
+			CreateMap<User, UserDto>();
+			CreateMap<User, LoginDto>();
 		}
 	}
 }
