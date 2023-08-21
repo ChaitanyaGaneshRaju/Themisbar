@@ -13,6 +13,7 @@ namespace Core.Specifications
 		{
 			AddInclude(x => x.Learner);
 		}
+		
 
 		public UserSpecification(string sort)
 		{

@@ -9,9 +9,11 @@ using Core.Interfaces;
 using Core.Specifications;
 using Microsoft.AspNetCore.Mvc;
 using API.Errors;
+using Microsoft.AspNetCore.Authorization;
 
 namespace API.Controllers
 {
+	[Authorize]
 	public class UsersController : BaseAPIController
 	{
 		private readonly IGenericRepository<User> _usersRepo;
@@ -36,7 +38,7 @@ namespace API.Controllers
 		[ProducesResponseType(StatusCodes.Status200OK)]
 		[ProducesResponseType(typeof(APIResponse), StatusCodes.Status404NotFound)]
 		public async Task<ActionResult<UserLearnerDto>> GetUser(long id)
-		{
+		{	
 			var spec = new UserSpecification(id);
 			var user = await _usersRepo.GetEntityWithSpec(spec);
 			

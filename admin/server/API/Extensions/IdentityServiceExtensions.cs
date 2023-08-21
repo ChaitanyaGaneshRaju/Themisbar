@@ -1,12 +1,9 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Text;
-using Core.Entities;
-using Core.Entities.Identity;
-using Infrastructure.Data;
-using Infrastructure.Data.Identity;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 
 namespace API.Extensions
@@ -15,44 +12,17 @@ namespace API.Extensions
 	{
 		public static IServiceCollection AddIdentityServices(this IServiceCollection services, IConfiguration config)
 		{
-			// var serverVersion = new MySqlServerVersion(new Version(5, 7, 33));
-
-			// // Replace 'YourDbContext' with the name of your own DbContext derived class.
-			// services.AddDbContext<AppIdentityDbContext>(
-			// 	dbContextOptions => dbContextOptions
-			// 		.UseMySql(config.GetConnectionString("DefaultConnection"), serverVersion)
-			// 		// The following three options help with debugging, but should
-			// 		// be changed or removed for production.
-			// 		.LogTo(Console.WriteLine, LogLevel.Information)
-			// 		.EnableSensitiveDataLogging()
-			// 		.EnableDetailedErrors(false)
-			// );
-			
-			services.AddIdentityCore<AppUser>(options =>
+			services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+			.AddJwtBearer(options =>
 			{
-				// add Identity options here
-				options.Password.RequiredLength = 8;
-			})
-			.AddEntityFrameworkStores<DataContext>()
-			.AddSignInManager<SignInManager<AppUser>>();
-			
-			services.AddAuthentication(auth => 
-			{
-				auth.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-				auth.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-			}).AddJwtBearer(options => 
-			{
-				options.TokenValidationParameters = new Microsoft.IdentityModel.Tokens.TokenValidationParameters
+				options.TokenValidationParameters = new TokenValidationParameters
 				{
-					ValidateIssuer = true,
-					ValidateAudience = true,
-					RequireExpirationTime = true,
-					IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("This is the key that will be used in encryption")),
-					ValidateIssuerSigningKey = true 
+					ValidateIssuerSigningKey = true,
+					IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["TokenSecretKey"])),
+					ValidateIssuer = false,
+					ValidateAudience = false
 				};
 			});
-			
-			services.AddAuthorization();
 			
 			return services;
 		}

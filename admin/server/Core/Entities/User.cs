@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Identity;
 
 namespace Core.Entities;
 
-public partial class User : IdentityUser
+public partial class User
 {
 	public long IdUser { get; set; }
 

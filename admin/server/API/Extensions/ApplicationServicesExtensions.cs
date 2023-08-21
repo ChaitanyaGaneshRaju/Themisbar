@@ -52,6 +52,7 @@ namespace API.Extensions
 								.Where(e => e.Value.Errors.Count > 0)
 								.SelectMany(x => x.Value.Errors)
 								.Select(x => x.ErrorMessage).ToArray();
+								
 					var errorResponse = new APIValidationErrorResponse
 					{
 						Errors = errors
