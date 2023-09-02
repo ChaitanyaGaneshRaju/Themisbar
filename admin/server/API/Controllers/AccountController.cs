@@ -24,12 +24,12 @@ namespace API.Controllers
 			this._context = context;
 		}
 
-		[HttpPost("login")]
-		public async Task<ActionResult<UserTokenDto>> Login(LoginDto loginDto)
+		[HttpPost("facultyLogin")]
+		public async Task<ActionResult<UserTokenDto>> FacultyLogin(LoginDto loginDto)
 		{
 			var user = await _context.Users.SingleOrDefaultAsync(u => u.Email == loginDto.Email);
 
-			if (user == null) return Unauthorized();
+			if (user == null) return Unauthorized(new APIResponse(401, "Invalid Email or Password"));
 
 			using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
 			{
@@ -44,16 +44,14 @@ namespace API.Controllers
 				}
 				var hashedPassword = sb.ToString();
 
-				Console.Write(hashedPassword);
-				Console.Write(user.Password);
-
 				if (hashedPassword != user.Password)
 				{
-					return Unauthorized("Invalid Password");
+					return Unauthorized(new APIResponse(401, "Invalid Email or Password"));
 				}
 
 				return new UserTokenDto
 				{
+					UserId = user.IdUser,
 					Email = user.Email,
 					Token = _tokenService.CreateToken(user)
 				};

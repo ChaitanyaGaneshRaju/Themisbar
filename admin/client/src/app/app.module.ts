@@ -3,9 +3,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { ClarityModule } from "@clr/angular";
 import { AppComponent } from './app.component';
-import { FacultyModule } from './modules/faculty.module';
+import { FacultyModule } from './components/faculty/faculty.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { GenericModule } from './modules/generic.module';
+import { GenericModule } from './components/generic/generic.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { GenericModule } from './modules/generic.module';
     AppRoutingModule,
     ClarityModule,
     FacultyModule,
-    GenericModule
+    GenericModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

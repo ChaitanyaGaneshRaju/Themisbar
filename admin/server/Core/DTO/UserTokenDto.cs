@@ -7,6 +7,7 @@ namespace Core.DTO
 {
 	public class UserTokenDto
 	{
+		public long UserId;
 		public string Email;
 		public string Token;
 	}
