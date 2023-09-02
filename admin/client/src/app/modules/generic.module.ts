@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { PageNotFoundComponent } from '../components/generic-module/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from '../components/generic/page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [

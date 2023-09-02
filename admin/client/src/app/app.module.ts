@@ -5,12 +5,6 @@ import { ClarityModule } from "@clr/angular";
 import { AppComponent } from './app.component';
 import { FacultyModule } from './modules/faculty.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReportDetailComponent } from './components/faculty-module/report-detail/report-detail.component';
-import { McqPerformanceComponent } from './components/faculty-module/mcq-performance/mcq-performance.component';
-import { McqApiComponent } from './components/faculty-module/mcq-api/mcq-api.component';
-import { GradedEssaysComponent } from './components/faculty-module/graded-essays/graded-essays.component';
-import { PracticeExamsComponent } from './components/faculty-module/practice-exams/practice-exams.component';
-import { IndividualViewComponent } from './components/faculty-module/individual-view/individual-view.component';
 import { GenericModule } from './modules/generic.module';
 
 @NgModule({
