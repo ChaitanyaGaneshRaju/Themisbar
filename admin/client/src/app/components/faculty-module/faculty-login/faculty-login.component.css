@@ -9,3 +9,8 @@
   background-size: 100% auto !important;
   background-position: center center !important;
 }
+
+.login-error+.btn, .remeber-me+.btn{
+  margin: 1.2rem 0 0 0 !important;
+}
+

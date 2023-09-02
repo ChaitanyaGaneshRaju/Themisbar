@@ -1,0 +1,9 @@
+.centered-content-area {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-not-found-container{
+  background-image: url('/assets/img/themis_logo-fff.svg');
+}

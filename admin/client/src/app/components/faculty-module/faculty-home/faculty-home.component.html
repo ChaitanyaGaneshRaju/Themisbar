@@ -1,3 +1,11 @@
+<!-- <div class="modal" [(clrModalOpen)]="basic">
+  <div class="modal-dialog modal-lg" role="dialog" aria-hidden="true">
+      <div class="modal-content">
+          ...
+      </div>
+  </div>
+</div>
+<div class="modal-backdrop" aria-hidden="true"></div> -->
 <div class="main-container">
   <!-- <div class="alert alert-app-level alert-info" role="alert">
     <div class="alert-items">
@@ -52,7 +60,14 @@
         <cds-icon shape="users" clrVerticalNavIcon></cds-icon>
         Individula view
       </a>
-      <a class="mt-auto logout" clrVerticalNavLink routerLinkActive="active" routerLink="./credit">
+      <a clrVerticalNavLink routerLinkActive="active" routerLink="./credit">
+        <cds-icon shape="user" clrVerticalNavIcon></cds-icon>
+        My Profile
+      </a>
+      <a class="mt-auto course-pill" clrVerticalNavLink routerLinkActive="active" routerLink="./credit">
+        Illinois Bar Review 520
+      </a>
+      <a class="logout" clrVerticalNavLink routerLink="./credit">
         <cds-icon shape="logout" clrVerticalNavIcon></cds-icon>
         Logout
       </a>

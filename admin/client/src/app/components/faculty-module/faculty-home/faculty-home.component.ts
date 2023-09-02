@@ -14,4 +14,5 @@ export class FacultyHomeComponent {
   constructor(private facultyIconsService: FacultyIconsService){
     this.facultyIconsService.load();
   }
+
 }

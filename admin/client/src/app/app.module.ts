@@ -11,24 +11,19 @@ import { McqApiComponent } from './components/faculty-module/mcq-api/mcq-api.com
 import { GradedEssaysComponent } from './components/faculty-module/graded-essays/graded-essays.component';
 import { PracticeExamsComponent } from './components/faculty-module/practice-exams/practice-exams.component';
 import { IndividualViewComponent } from './components/faculty-module/individual-view/individual-view.component';
-// import { FacultyHomeComponent } from './components/faculty-module/faculty-home/faculty-home.component';
+import { GenericModule } from './modules/generic.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ReportDetailComponent,
-    McqPerformanceComponent,
-    McqApiComponent,
-    GradedEssaysComponent,
-    PracticeExamsComponent,
-    IndividualViewComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     ClarityModule,
-    FacultyModule
+    FacultyModule,
+    GenericModule
   ],
   providers: [],
   bootstrap: [AppComponent]

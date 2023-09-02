@@ -11,3 +11,13 @@
   padding-top: 0px !important;
 }
 
+.course-pill{
+  background-color: #0072a3;
+  color: white;
+  border: none;
+  border-radius: 100px;
+}
+
+.logout:hover{
+  background-color: transparent !important;
+}

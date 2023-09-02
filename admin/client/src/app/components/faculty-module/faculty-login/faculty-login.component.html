@@ -15,15 +15,19 @@
               <label class="clr-sr-only">Password</label>
               <input type="password" autocomplete="current-password" name="password" clrPassword placeholder="Password"/>
           </clr-password-container>
-          <clr-checkbox-wrapper>
+          <clr-checkbox-wrapper class="remeber-me">
               <label>Remember me</label>
               <input type="checkbox" name="rememberMe" clrCheckbox/>
           </clr-checkbox-wrapper>
-          <div class="error active">
-              Invalid user name or password
-          </div>
+          <clr-alert class="login-error" clrAlertType="danger" aria-live="assertive" [ngStyle]="{visibility: 'visible'}">
+            <clr-alert-item>
+              <span class="alert-text">
+                Invalid user name or password
+              </span>
+            </clr-alert-item>
+          </clr-alert>
           <button type="submit" class="btn btn-primary">NEXT</button>
-          <a href="javascript://" class="signup">Sign up for a Company ID</a>
+          <label class="signup">Don't have an account? Register <a href="javascript://" class="signup">Here</a></label>
       </div>
   </form>
 </div>

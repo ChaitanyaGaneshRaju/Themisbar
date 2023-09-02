@@ -8,6 +8,7 @@ import { McqApiComponent } from './components/faculty-module/mcq-api/mcq-api.com
 import { PracticeExamsComponent } from './components/faculty-module/practice-exams/practice-exams.component';
 import { IndividualViewComponent } from './components/faculty-module/individual-view/individual-view.component';
 import { GradedEssaysComponent } from './components/faculty-module/graded-essays/graded-essays.component';
+import { PageNotFoundComponent } from './components/generic-module/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   { path: 'login', component: FacultyLoginComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
       { path: 'individual-view', component: IndividualViewComponent },
     ],
   },
+  {path:'**', component: PageNotFoundComponent}
 ];
 
 @NgModule({
