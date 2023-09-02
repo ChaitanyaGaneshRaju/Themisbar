@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import '@cds/core/icon/register.js';
 import { UserToken } from 'src/app/interfaces/user-token';
 import { AccountService } from 'src/app/services/account.service';
@@ -13,7 +14,7 @@ import { FacultyIconsService } from 'src/app/services/faculty-icons.service';
 export class FacultyHomeComponent {
   demoCollapsible = true;
 
-  constructor(private facultyIconsService: FacultyIconsService, private accountService: AccountService){
+  constructor(private facultyIconsService: FacultyIconsService, private accountService: AccountService, private router: Router){
     this.facultyIconsService.load();
   }
 
@@ -32,6 +33,7 @@ export class FacultyHomeComponent {
 
   logout(){
     this.accountService.facultyLogout();
+    this.router.navigate(['/login']);
   }
 
 }
