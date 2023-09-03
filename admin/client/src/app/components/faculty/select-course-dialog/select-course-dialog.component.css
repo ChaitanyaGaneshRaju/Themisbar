@@ -1,0 +1,15 @@
+ /* clr Inputs
+ .clr-input,
+ .clr-select,
+ .clr-input-wrapper,
+ .clr-select-wrapper {
+   max-width: 100% !important;
+   width: 100% !important;
+ }
+
+ .clr-control-container,
+ .clr-input-wrapper.clr-input,
+ .clr-select-wrapper.clr-select {
+   padding-left: 0 !important;
+   padding-right: 0 !important;
+ } */

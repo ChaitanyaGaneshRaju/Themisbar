@@ -64,7 +64,7 @@
         <cds-icon shape="user" clrVerticalNavIcon></cds-icon>
         My Profile
       </a>
-      <a class="mt-auto course-pill" clrVerticalNavLink routerLinkActive="active" routerLink="./credit">
+      <a class="mt-auto course-pill" clrVerticalNavLink href="javascript:void(0);" (click)="modal.open(courses)">
         Illinois Bar Review 520
       </a>
       <a class="logout" clrVerticalNavLink href="javascript:void(0);" (click)="logout()">
@@ -74,3 +74,4 @@
     </clr-vertical-nav>
   </div>
 </div>
+<app-select-course-dialog></app-select-course-dialog>

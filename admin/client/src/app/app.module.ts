@@ -7,10 +7,12 @@ import { FacultyModule } from './components/faculty/faculty.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { GenericModule } from './components/generic/generic.module';
 import { HttpClientModule } from '@angular/common/http';
+import { AutofocusDirective } from './directives/autofocus.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
+    AutofocusDirective,
   ],
   imports: [
     BrowserModule,

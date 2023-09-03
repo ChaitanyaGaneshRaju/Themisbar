@@ -12,6 +12,7 @@ import { PracticeExamsComponent } from './practice-exams/practice-exams.componen
 import { ReportDetailComponent } from './report-detail/report-detail.component';
 import { MyProfileComponent } from './my-profile/my-profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SelectCourseDialogComponent } from './select-course-dialog/select-course-dialog.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PracticeExamsComponent,
     ReportDetailComponent,
     MyProfileComponent,
+    SelectCourseDialogComponent,
   ],
   imports: [
     CommonModule,

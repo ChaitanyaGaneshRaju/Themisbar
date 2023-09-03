@@ -24,7 +24,7 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 app.UseMiddleware<ExceptionMiddleware>();
 app.UseCors("CorsPolicy");
-app.UseStatusCodePagesWithRedirects("/errors/{0}");
+// app.UseStatusCodePagesWithRedirects("/errors/{0}");
 
 if (app.Environment.IsDevelopment())
 {
@@ -32,7 +32,7 @@ if (app.Environment.IsDevelopment())
 	app.UseSwaggerUI();
 }
 
-// app.UseHttpsRedirection();
+app.UseHttpsRedirection();
 
 app.UseAuthentication();
 app.UseAuthorization();

@@ -27,7 +27,9 @@
               "node_modules/@clr/ui/clr-ui-dark.min.css",
               "node_modules/@cds/core/global.min.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/@clr/icons/clr-icons.min.js"
+            ]
           },
           "configurations": {
             "production": {

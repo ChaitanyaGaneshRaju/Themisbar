@@ -51,10 +51,12 @@ export class FacultyLoginComponent {
         this.submitButton.nativeElement.disabled = false;
         this.errorTextSubscription = this.errorText.changes.subscribe(
           (comps: QueryList<ElementRef>) => {
+
             comps.first.nativeElement.innerText = errorResponse.error.message;
           }
         );
         this.loginError = true;
+        // this.errorTextSubscription.unsubscribe();
       },
     });
   }
