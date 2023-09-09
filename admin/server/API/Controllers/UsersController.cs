@@ -28,9 +28,9 @@ namespace API.Controllers
 		}
 
 		[HttpGet]
-		public async Task<ActionResult<List<User>>> GetUsers(string sort)
+		public async Task<ActionResult<List<User>>> GetUsers([FromQuery]UserSpecParams userParams)
 		{
-			var spec = new UserSpecification(sort);
+			var spec = new UserSpecification(userParams);
 			return Ok(await _usersRepo.ListAsync(spec));
 		}
 

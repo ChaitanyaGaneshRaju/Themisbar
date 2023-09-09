@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import '@cds/core/icon/register.js';
-import { UserToken } from 'src/app/interfaces/user-token';
+import { UserDataToken } from 'src/app/interfaces/user-data-token';
 import { AccountService } from 'src/app/services/account.service';
 import { FacultyIconsService } from 'src/app/services/faculty-icons.service';
 import { SelectCourseDialogComponent } from '../select-course-dialog/select-course-dialog.component';
@@ -33,14 +33,6 @@ export class FacultyHomeComponent {
 
   ngOnInit(): void {}
 
-  setCurrentUserToken() {
-    const userToken = this.accountService.getCurrentUserToken();
-
-    if (!userToken) return;
-    const userTokenParsed: UserToken = JSON.parse(userToken);
-
-    this.accountService.setCurrentUserToken(userTokenParsed);
-  }
 
   logout() {
     this.accountService.facultyLogout();

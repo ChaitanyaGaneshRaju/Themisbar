@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
 import { ClrForm } from '@clr/angular';
-import { Observable } from 'rxjs';
+import { Observable, take } from 'rxjs';
 import { AccountService } from 'src/app/services/account.service';
 
 @Component({
@@ -23,8 +23,6 @@ export class FacultyLoginComponent {
   @ViewChild('submitButton', { static: false }) submitButton!: ElementRef;
   @ViewChildren('errorText') errorText!: QueryList<ElementRef>;
   @ViewChild('loginFrom') form!: NgForm;
-
-  private errorTextSubscription!: any;
 
   constructor(
     private titleService: Title,
@@ -49,20 +47,18 @@ export class FacultyLoginComponent {
       error: (errorResponse) => {
         console.log(errorResponse);
         this.submitButton.nativeElement.disabled = false;
-        this.errorTextSubscription = this.errorText.changes.subscribe(
+        this.errorText.changes.pipe(take(1)).subscribe(
           (comps: QueryList<ElementRef>) => {
 
             comps.first.nativeElement.innerText = errorResponse.error.message;
           }
         );
         this.loginError = true;
-        // this.errorTextSubscription.unsubscribe();
       },
     });
   }
 
   clearError() {
     this.loginError = false;
-    this.errorTextSubscription.unsubscribe();
   }
 }

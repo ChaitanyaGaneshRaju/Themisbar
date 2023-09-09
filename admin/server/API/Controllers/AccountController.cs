@@ -30,6 +30,8 @@ namespace API.Controllers
 			var user = await _context.Users.SingleOrDefaultAsync(u => u.Email == loginDto.Email);
 
 			if (user == null) return Unauthorized(new APIResponse(401, "Invalid Email or Password"));
+			
+			if (user.IdRole != 20) return Unauthorized(new APIResponse(401, "Invalid Email or Password"));
 
 			using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
 			{

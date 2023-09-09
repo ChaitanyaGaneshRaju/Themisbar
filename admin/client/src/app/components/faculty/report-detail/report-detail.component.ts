@@ -13,7 +13,7 @@ export class ReportDetailComponent {
   constructor(private facultyIconsService: FacultyIconsService){
     this.facultyIconsService.load();
   }
-  
+
 
   users = [
     {

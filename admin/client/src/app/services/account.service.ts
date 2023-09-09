@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, map, tap } from 'rxjs';
-import { UserToken } from '../interfaces/user-token';
+import { UserDataToken } from '../interfaces/user-data-token';
 import { HttpClient } from '@angular/common/http';
+import { LocalStorageService } from './local-storage.service';
 
 @Injectable({
   providedIn: 'root'
@@ -10,34 +11,34 @@ export class AccountService {
 
   readonly baseUrl: string = 'http://localhost:5001/api/';
 
-  private currentUserSource = new BehaviorSubject<UserToken | null>(null);
+  private currentUserSource = new BehaviorSubject<UserDataToken | null>(null);
   currentUser$ = this.currentUserSource.asObservable();
 
-  constructor(private http: HttpClient ) { }
+  constructor(private http: HttpClient, private localStorageService: LocalStorageService ) { }
 
 
   facultyLogin(model: any){
-    return this.http.post<UserToken>(this.baseUrl + 'account/facultyLogin', model).pipe(
-      tap((response: UserToken) => {
-        const userToken = response;
-        if (userToken){
-          localStorage.setItem("userToken", JSON.stringify(userToken))
-          this.setCurrentUserToken(userToken);
+    return this.http.post<UserDataToken>(this.baseUrl + 'account/facultyLogin', model).pipe(
+      tap((response: UserDataToken) => {
+        const userDataToken = response;
+        if (userDataToken){
+          this.localStorageService.setObject("userDataToken",userDataToken);
+          this.setCurrentuserDataToken(userDataToken);
         }
       })
     )
   }
 
-  getCurrentUserToken(){
-    return localStorage.getItem("userToken");
+  getCurrentuserDataToken(){
+    return this.localStorageService.getItem("userDataToken");
   }
 
-  setCurrentUserToken(userToken: UserToken){
-    this.currentUserSource.next(userToken);
+  setCurrentuserDataToken(userDataToken: UserDataToken){
+    this.currentUserSource.next(userDataToken);
   }
 
   facultyLogout(){
-    localStorage.removeItem("userToken");
+    this.localStorageService.removeItem("userDataToken");
     this.currentUserSource.next(null);
   }
 
