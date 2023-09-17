@@ -1,13 +1,18 @@
 <div class="main-container">
   <div class="content-container">
-    <div class="content-area">
-      <router-outlet></router-outlet>
+    <div class="content-area content-area-container">
+      <div>
+        <router-outlet></router-outlet>
+      </div>
+      <div class="clr-footer">
+        <label>© {{currentYear}} Themis Bar Review LLC All Rights Reserved | Privacy | Terms of Use</label>
+      </div>
     </div>
     <clr-vertical-nav class="bold">
       <div class="clr-row clr-align-items-center text-center clr-justify-content-center"
         style="padding-bottom: 0.9rem;">
         <div class="clr-col">
-          <img src="/assets/img/Themisbar_logo_2.png" width="75%" />
+          <img src="/assets/img/Themisbar_logo.png" width="75%" />
         </div>
       </div>
       <a clrVerticalNavLink routerLinkActive="active" routerLink="./report-detail">

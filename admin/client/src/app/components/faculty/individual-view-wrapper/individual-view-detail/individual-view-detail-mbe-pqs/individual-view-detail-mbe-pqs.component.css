@@ -1,0 +1,21 @@
+.limit-height clr-datagrid {
+  height: 50vh !important;
+}
+
+.mbe-pqs-top{
+  display: flex;
+}
+
+.student-national-average-container{
+  width: 50%;
+}
+
+.get-mbe-pqs-button{
+  padding-left: 0 !important;
+  /* margin-top: 25%; */
+}
+
+.get-mbe-pqs-drop-down-container{
+  /* text-align: center; */
+  padding-left: 10%;
+}

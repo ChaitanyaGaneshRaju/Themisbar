@@ -1,0 +1,32 @@
+<div>
+  <br>
+  <label class="bold">Assignments completed</label>
+  <clr-progress-bar clrValue="70" clrLabeled></clr-progress-bar>
+  <br>
+  <div class="limit-height">
+    <clr-datagrid>
+      <clr-dg-column [clrDgField]="'seq'">Seq</clr-dg-column>
+      <clr-dg-column [clrDgField]="'name'" >Name</clr-dg-column>
+      <clr-dg-column [clrDgField]="'type'" >Type</clr-dg-column>
+      <clr-dg-column>Subject</clr-dg-column>
+      <clr-dg-column>Completed</clr-dg-column>
+      <clr-dg-placeholder>We couldn't find any users!</clr-dg-placeholder>
+
+      <clr-dg-row *clrDgItems="let assignment of assignments" class="individual-view-data-grid-row">
+        <clr-dg-cell>{{assignment.seq}}</clr-dg-cell>
+        <clr-dg-cell>{{assignment.name}}</clr-dg-cell>
+        <clr-dg-cell>{{assignment.type}}</clr-dg-cell>
+        <clr-dg-cell>{{assignment.subject}}</clr-dg-cell>
+        <clr-dg-cell>{{assignment.completed}}</clr-dg-cell>
+      </clr-dg-row>
+
+      <clr-dg-footer>
+        <clr-dg-pagination #pagination [clrDgPageSize]="50">
+          <clr-dg-page-size [clrPageSizeOptions]="[10,20,50,75]">Assignments per page</clr-dg-page-size>
+          {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+          of {{pagination.totalItems}} Assignments
+        </clr-dg-pagination>
+      </clr-dg-footer>
+    </clr-datagrid>
+  </div>
+</div>

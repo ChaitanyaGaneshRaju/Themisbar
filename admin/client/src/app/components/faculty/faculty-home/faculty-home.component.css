@@ -21,3 +21,19 @@
 .logout:hover{
   background-color: transparent !important;
 }
+
+.clr-footer {
+  background-color:  #2a4252;
+  text-align: center;
+  /* max-width: calc(100% + 40px); */
+  margin-left: -22px;
+  margin-right: -22px;
+  /* font-size: 0.7em; */
+}
+
+.content-area-container{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  padding-bottom: 0 !important;
+}

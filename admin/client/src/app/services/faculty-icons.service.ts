@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ClarityIcons, clipboardIcon, usersIcon, logoutIcon, downloadIcon, userIcon } from '@cds/core/icon';
+import { ClarityIcons, clipboardIcon, usersIcon, logoutIcon, downloadIcon, userIcon, envelopeIcon, phoneHandsetIcon, checkIcon, fileIcon, angleIcon, infoStandardIcon } from '@cds/core/icon';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +15,13 @@ export class FacultyIconsService {
     usersIcon,
     logoutIcon,
     downloadIcon,
-    userIcon
+    userIcon,
+    envelopeIcon,
+    phoneHandsetIcon,
+    checkIcon,
+    fileIcon,
+    angleIcon,
+    infoStandardIcon
   ]
 
   public load() {

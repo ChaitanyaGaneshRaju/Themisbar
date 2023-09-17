@@ -1,0 +1,30 @@
+.individual-view-form{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-around;
+
+}
+
+.individual-view-form-submit{
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 10%;
+}
+
+.individual-view-form-input{
+  width: 30em !important;
+}
+
+.individual-view-form-label{
+  width: 30em !important;
+}
+
+
+.limit-height clr-datagrid {
+  height: 55vh !important;
+}
+
+.individual-view-data-grid-row{
+  cursor: pointer;
+}

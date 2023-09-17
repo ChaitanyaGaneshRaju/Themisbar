@@ -1,0 +1,12 @@
+.accordion-title {
+  display: flex;
+}
+
+.limit-height clr-datagrid {
+  height: 70vh !important;
+}
+
+.limit-width{
+  width: 100%;
+}
+

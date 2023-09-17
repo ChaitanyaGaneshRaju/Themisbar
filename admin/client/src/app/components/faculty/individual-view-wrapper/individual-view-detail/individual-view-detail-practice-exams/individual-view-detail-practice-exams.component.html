@@ -1,0 +1,80 @@
+<div>
+  <br>
+  <div class="limit-height limit-width">
+    <clr-datagrid>
+      <clr-dg-column [clrDgField]="'examName'">Exam Name</clr-dg-column>
+      <clr-dg-column>Completed</clr-dg-column>
+      <clr-dg-column>Questions</clr-dg-column>
+      <clr-dg-column>Correct</clr-dg-column>
+      <clr-dg-column>Score Vs Average</clr-dg-column>
+      <clr-dg-placeholder>We couldn't find any users!</clr-dg-placeholder>
+
+      <clr-dg-row *clrDgItems="let practiceExam of practiceExams" class="individual-view-data-grid-row">
+        <clr-dg-cell>{{practiceExam.examName}}</clr-dg-cell>
+        <clr-dg-cell>{{practiceExam.completed}}</clr-dg-cell>
+        <clr-dg-cell>{{practiceExam.questions}}</clr-dg-cell>
+        <clr-dg-cell>{{practiceExam.correct}}</clr-dg-cell>
+        <clr-dg-cell>
+          <label>Score</label>
+          <clr-progress-bar clrValue="{{practiceExam.score}}" clrLabeled></clr-progress-bar>
+          <br>
+          <label>Average</label>
+          <clr-progress-bar clrValue="{{practiceExam.average}}" clrLabeled></clr-progress-bar>
+        </clr-dg-cell>
+        <clr-dg-row-detail clrIfExpanded (clrIfExpandedChange)="rowChange($event)">
+          <!-- <div *ngIf="true">
+            <clr-spinner clrInline>
+              Loading
+            </clr-spinner>
+            <label> Loading... </label>
+          </div> -->
+          <br />
+          <table class="table table-compact table-noborder">
+            <thead>
+              <tr>
+                <th>Decimal</th>
+                <th>Hexadecimal</th>
+                <th>Binary</th>
+                <th>Roman Numeral</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>1</td>
+                <td>1</td>
+                <td>I</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>5</td>
+                <td>101</td>
+                <td>V</td>
+              </tr>
+              <tr>
+                <td>10</td>
+                <td>A</td>
+                <td>1010</td>
+                <td>X</td>
+              </tr>
+              <tr>
+                <td>15</td>
+                <td>F</td>
+                <td>1111</td>
+                <td>XV</td>
+              </tr>
+            </tbody>
+          </table>
+        </clr-dg-row-detail>
+      </clr-dg-row>
+
+      <clr-dg-footer>
+        <clr-dg-pagination #pagination [clrDgPageSize]="50">
+          <clr-dg-page-size [clrPageSizeOptions]="[10,20,50,75]">Assignments per page</clr-dg-page-size>
+          {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+          of {{pagination.totalItems}} Assignments
+        </clr-dg-pagination>
+      </clr-dg-footer>
+    </clr-datagrid>
+  </div>
+</div>

@@ -15,6 +15,8 @@ import { SelectCourseDialogComponent } from '../select-course-dialog/select-cour
 export class FacultyHomeComponent {
   @ViewChild(SelectCourseDialogComponent) modal!: SelectCourseDialogComponent;
 
+  currentYear = (new Date()).getFullYear();
+
   courses: Array<string> = [
     'Illinois Bar Review 520',
     'Florida Bar Review 518',

@@ -1,0 +1,37 @@
+.individual-view-details-tab{
+  display: flex;
+  padding-top:5%;
+}
+
+.individual-view-details-tab-first-item{
+  width: 40% !important;
+}
+
+.individual-view-details-tab-first-item > label{
+  font-size: 1.2em !important;
+}
+
+.individual-view-details-tab-second-item{
+  border-left: 1px solid rgb(99, 99, 99) !important;
+  padding-left: 5%;
+}
+
+
+.individual-view-details-assignments-completion{
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.individual-view-details-assignments-completion > * {
+  border-right: 1px solid rgb(99, 99, 99);
+}
+
+.individual-view-details-assignments-completion > :nth-child(4) {
+  border-right: none !important;
+}
+
+
+.course-name{
+  margin-top: 0 !important;
+}

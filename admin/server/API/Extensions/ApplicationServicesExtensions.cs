@@ -1,8 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using API.Errors;
+using API.Services;
 using Core.Interfaces;
 using Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
@@ -17,6 +14,8 @@ namespace API.Extensions
 
 			// Add services to the container.
 			services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
+			services.AddScoped<ITokenService, TokenService>();
+			
 			services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 
@@ -38,7 +37,7 @@ namespace API.Extensions
 					.UseMySql(config.GetConnectionString("DefaultConnection"), serverVersion)
 					// The following three options help with debugging, but should
 					// be changed or removed for production.
-					.LogTo(Console.WriteLine, LogLevel.Information)
+					.LogTo(s => System.Diagnostics.Debug.WriteLine(s), LogLevel.Information)
 					.EnableSensitiveDataLogging()
 					.EnableDetailedErrors(false)
 			);

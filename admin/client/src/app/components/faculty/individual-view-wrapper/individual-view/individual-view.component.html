@@ -1,0 +1,70 @@
+<div>
+  <div>
+    <h1 class="page-header">Individual View</h1>
+  </div>
+  <div>
+    <!-- Form code starts -->
+    <form clrForm clrLayout="horizontal">
+      <div class="individual-view-form">
+        <div class="form-first-half">
+          <clr-input-container>
+            <label class="clr-required-mark individual-view-form-label">First Name:</label>
+            <input class="individual-view-form-input" clrInput type="text" name="example" />
+          </clr-input-container>
+          <clr-input-container>
+            <label class="clr-required-mark individual-view-form-label">Email:</label>
+            <input class="individual-view-form-input" clrInput type="text" name="example" />
+          </clr-input-container>
+        </div>
+        <div class="form-second-half">
+          <clr-input-container>
+            <label class="clr-required-mark individual-view-form-label">Last Name:</label>
+            <input class="individual-view-form-input" clrInput type="text" name="example" />
+          </clr-input-container>
+          <clr-input-container>
+            <label class="clr-required-mark individual-view-form-label">Reg Id:</label>
+            <input class="individual-view-form-input" clrInput type="text" name="example" />
+          </clr-input-container>
+        </div>
+      </div>
+      <br />
+      <div class="individual-view-form-submit">
+        <button class="btn btn-primary btn-md" type="submit">Submit</button>
+      </div>
+    </form>
+    <!-- Form code ends -->
+
+    <!-- Data Grid code start -->
+    <label><cds-icon shape="info-standard"></cds-icon> Please select a student to see the details.</label>
+    <div class="limit-height">
+      <clr-datagrid>
+        <clr-dg-column [clrDgField]="'name'">Name</clr-dg-column>
+        <clr-dg-column [clrDgField]="'email'" >Email</clr-dg-column>
+        <clr-dg-column>Course</clr-dg-column>
+        <clr-dg-column [clrDgField]="'percentageCompleted'" [clrDgSortBy]="customComparator">Overall Completion</clr-dg-column>
+
+        <clr-dg-placeholder>We couldn't find any users!</clr-dg-placeholder>
+
+        <clr-dg-row *clrDgItems="let user of users" class="individual-view-data-grid-row" (click)="gotoUserIndividualView()">
+          <clr-dg-cell>{{user.name}}</clr-dg-cell>
+          <clr-dg-cell>{{user.email}}</clr-dg-cell>
+          <clr-dg-cell>{{user.course}}</clr-dg-cell>
+          <clr-dg-cell>
+            <clr-progress-bar
+              clrValue="{{user.percentageCompleted}}"
+              clrLabeled>
+            </clr-progress-bar>
+            </clr-dg-cell>
+        </clr-dg-row>
+
+        <clr-dg-footer>
+          <clr-dg-pagination #pagination [clrDgPageSize]="50">
+            <clr-dg-page-size [clrPageSizeOptions]="[10,20,50,75]">Users per page</clr-dg-page-size>
+            {{pagination.firstItem + 1}} - {{pagination.lastItem + 1}}
+            of {{pagination.totalItems}} users
+          </clr-dg-pagination>
+        </clr-dg-footer>
+      </clr-datagrid>
+    </div>
+  </div>
+</div>

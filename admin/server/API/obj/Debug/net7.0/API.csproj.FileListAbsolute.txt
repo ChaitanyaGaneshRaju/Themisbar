@@ -67,3 +67,4 @@ D:\Learning stuff\Themisbar\admin\server\API\bin\Debug\net7.0\Microsoft.AspNetCo
 D:\Learning stuff\Themisbar\admin\server\API\bin\Debug\net7.0\Microsoft.AspNetCore.Authentication.OpenIdConnect.dll
 D:\Learning stuff\Themisbar\admin\server\API\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.dll
 D:\Learning stuff\Themisbar\admin\server\API\bin\Debug\net7.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Learning stuff\Themisbar\admin\server\API\bin\Debug\net7.0\global.json

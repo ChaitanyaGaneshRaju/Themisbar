@@ -6,10 +6,12 @@ import { ReportDetailComponent } from './components/faculty/report-detail/report
 import { McqPerformanceComponent } from './components/faculty/mcq-performance/mcq-performance.component';
 import { McqApiComponent } from './components/faculty/mcq-api/mcq-api.component';
 import { PracticeExamsComponent } from './components/faculty/practice-exams/practice-exams.component';
-import { IndividualViewComponent } from './components/faculty/individual-view/individual-view.component';
+import { IndividualViewComponent } from './components/faculty/individual-view-wrapper/individual-view/individual-view.component';
 import { GradedEssaysComponent } from './components/faculty/graded-essays/graded-essays.component';
 import { PageNotFoundComponent } from './components/generic/page-not-found/page-not-found.component';
 import { MyProfileComponent } from './components/faculty/my-profile/my-profile.component';
+import { IndividualViewDetailComponent } from './components/faculty/individual-view-wrapper/individual-view-detail/individual-view-detail.component';
+import { IndividualViewWrapperComponent } from './components/faculty/individual-view-wrapper/individual-view-wrapper.component';
 
 const routes: Routes = [
   { path: 'login', component: FacultyLoginComponent },
@@ -23,7 +25,11 @@ const routes: Routes = [
       { path: 'mcq-api', component: McqApiComponent },
       { path: 'graded-essays', component: GradedEssaysComponent },
       { path: 'practice-exams', component: PracticeExamsComponent },
-      { path: 'individual-view', component: IndividualViewComponent },
+      { path: 'individual-view', component: IndividualViewWrapperComponent,
+      children:[
+        { path: '', component: IndividualViewComponent,},
+        { path: 'detail/:regId', component: IndividualViewDetailComponent }
+      ]},
       { path: 'my-profile', component: MyProfileComponent },
     ],
   },

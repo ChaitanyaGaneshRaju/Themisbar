@@ -1,6 +1,6 @@
 fieldset{
   border-radius: 5px !important;
-  border: 1px solid rgb(121, 120, 120) !important;
+  border: 1px solid rgb(99, 99, 99) !important;
 }
 /*
 .revert,
@@ -19,7 +19,7 @@ fieldset{
  }
 
  .left-half{
-  border-right: 1px solid white;
+  border-right: 1px solid rgb(99, 99, 99);
  }
 
  .table{
