@@ -25,6 +25,7 @@
 
 .individual-view-details-assignments-completion > * {
   border-right: 1px solid rgb(99, 99, 99);
+  padding: 0.25%;
 }
 
 .individual-view-details-assignments-completion > :nth-child(4) {
