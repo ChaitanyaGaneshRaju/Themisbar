@@ -24,6 +24,8 @@ namespace Core.Specifications
 
 		public BaseSpecification(Expression<Func<T, bool>> criteria)
 		{
+			Console.Write("==================================");
+			Console.Write(criteria);
 			Criteria = criteria;
 		}
 

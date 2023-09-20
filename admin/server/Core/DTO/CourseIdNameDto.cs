@@ -7,7 +7,7 @@ namespace Core.DTO
 {
     public class CourseIdNameDto
     {
-        public long courseId { get; set; }
-        public string courseName { get; set; }
+        public long CourseId { get; set; }
+        public string CourseName { get; set; }
     }
 }

@@ -26,38 +26,34 @@ namespace API.Controllers
 
 		[HttpPost("facultyLogin")]
 		public async Task<ActionResult<UserTokenDto>> FacultyLogin(LoginDto loginDto)
-		{
-			var user = await _context.Users.SingleOrDefaultAsync(u => u.Email == loginDto.Email);
+        {
+            var user = await _context.Users.SingleOrDefaultAsync(u => u.Email == loginDto.Email);
 
-			if (user == null) return Unauthorized(new APIResponse(401, "Invalid Email or Password"));
-			
-			if (user.IdRole != 20) return Unauthorized(new APIResponse(401, "Invalid Email or Password"));
+            if (user == null) return Unauthorized(new APIResponse(401, "Invalid Email or Password"));
 
-			using (System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create())
-			{
-				byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(loginDto.Password);
-				byte[] hashBytes = md5.ComputeHash(inputBytes);
+            if (user.IdRole != 20) return Unauthorized(new APIResponse(401, "Invalid Email or Password"));
+            byte[] inputBytes = System.Text.Encoding.ASCII.GetBytes(loginDto.Password);
+            byte[] hashBytes = System.Security.Cryptography.MD5.HashData(inputBytes);
 
-				// Convert the byte array to hexadecimal string
-				StringBuilder sb = new StringBuilder();
-				for (int i = 0; i < hashBytes.Length; i++)
-				{
-					sb.Append(hashBytes[i].ToString("x2"));
-				}
-				var hashedPassword = sb.ToString();
+            // Convert the byte array to hexadecimal string
+            StringBuilder sb = new();
+            for (int i = 0; i < hashBytes.Length; i++)
+            {
+                sb.Append(hashBytes[i].ToString("x2"));
+            }
+            var hashedPassword = sb.ToString();
 
-				if (hashedPassword != user.Password)
-				{
-					return Unauthorized(new APIResponse(401, "Invalid Email or Password"));
-				}
+            if (hashedPassword != user.Password)
+            {
+                return Unauthorized(new APIResponse(401, "Invalid Email or Password"));
+            }
 
-				return new UserTokenDto
-				{
-					UserId = user.IdUser,
-					Email = user.Email,
-					Token = _tokenService.CreateToken(user)
-				};
-			}
-		}
-	}
+            return new UserTokenDto
+            {
+                UserId = user.IdUser,
+                Email = user.Email,
+                Token = _tokenService.CreateToken(user)
+            };
+        }
+    }
 }
