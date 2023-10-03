@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { SpinnerComponent } from './spinner/spinner.component';
+import { ClarityModule } from '@clr/angular';
 
 @NgModule({
   declarations: [
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SpinnerComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    ClarityModule
   ],
   exports :[
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SpinnerComponent
   ]
 })
 export class GenericModule { }

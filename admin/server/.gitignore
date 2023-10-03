@@ -4,3 +4,5 @@
 ./API/obj/
 ./Core/obj/
 ./Infrastructure/obj/
+bin/
+obj/

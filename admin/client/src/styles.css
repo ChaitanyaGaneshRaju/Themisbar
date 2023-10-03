@@ -41,9 +41,6 @@
   height: 8px;
 }
 
-*::-webkit-scrollbar-track {
-  background: rgb(75, 94, 99);
-}
 
 *::-webkit-scrollbar-thumb {
   background-color: #b8b8b8;

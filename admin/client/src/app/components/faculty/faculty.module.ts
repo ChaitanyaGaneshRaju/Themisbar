@@ -20,6 +20,7 @@ import { IndividualViewDetailAssignmentsComponent } from './individual-view-wrap
 import { IndividualViewDetailMbePqsComponent } from './individual-view-wrapper/individual-view-detail/individual-view-detail-mbe-pqs/individual-view-detail-mbe-pqs.component';
 import { IndividualViewDetailPracticeExamsComponent } from './individual-view-wrapper/individual-view-detail/individual-view-detail-practice-exams/individual-view-detail-practice-exams.component';
 import { IndividualViewGradedEssaysComponent } from './individual-view-wrapper/individual-view-detail/individual-view-graded-essays/individual-view-graded-essays.component';
+import { GenericModule } from '../generic/generic.module';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { IndividualViewGradedEssaysComponent } from './individual-view-wrapper/i
     ClarityModule,
     RouterModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    GenericModule
   ],
   exports:[
     FacultyLoginComponent,

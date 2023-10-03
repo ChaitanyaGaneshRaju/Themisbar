@@ -1,0 +1,7 @@
+.centered-content-area {
+  height: 80vh;
+  display:flex;
+  justify-content: center !important;
+  align-items: center !important;
+  column-gap: 0.5em;
+}

@@ -1,8 +1,6 @@
 import { Component, ViewChild } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { Router } from '@angular/router';
-import '@cds/core/icon/register.js';
-import { UserDataToken } from 'src/app/interfaces/user-data-token';
 import { AccountService } from 'src/app/services/account.service';
 import { FacultyIconsService } from 'src/app/services/faculty-icons.service';
 import { SelectCourseDialogComponent } from '../select-course-dialog/select-course-dialog.component';
