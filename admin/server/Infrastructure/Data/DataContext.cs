@@ -4245,7 +4245,7 @@ public partial class DataContext : DbContext
 			entity.Property(e => e.IdCourse)
 				.HasColumnType("bigint(20)")
 				.HasColumnName("id_course");
-		});
+						});
 
 		modelBuilder.Entity<FacultyLawSchool>(entity =>
 		{

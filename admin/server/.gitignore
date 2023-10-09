@@ -1,8 +1,8 @@
-./API/bin/
-./Core/bin/
-./Infrastructure/bin/
-./API/obj/
-./Core/obj/
-./Infrastructure/obj/
+/API/bin/
+/Core/bin/
+/Infrastructure/bin/
+/API/obj/
+/Core/obj/
+/Infrastructure/obj/
 bin/
 obj/

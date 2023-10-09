@@ -1,3 +1,4 @@
+using API.Helpers;
 using AutoMapper;
 using Core.DTO;
 using Core.Entities;
@@ -11,33 +12,54 @@ namespace API.DAO
 	public class FacultyDao
 	{
 		private readonly DataContext _context;
-        private readonly GenericRepository<FacultyLawSchool> _facultyLawSchoolRepo;
+		private readonly GenericRepository<FacultyLawSchool> _facultyLawSchoolRepo;
+		private readonly GenericRepository<FacultyCourse> _facultyCourseRepo;
+		private readonly Mapper _mapper;
 
-        public FacultyDao()
+		public FacultyDao()
 		{
 			this._context = new DataContext();
-            this._facultyLawSchoolRepo = new GenericRepository<FacultyLawSchool>(_context);
-        }
+			this._facultyLawSchoolRepo = new GenericRepository<FacultyLawSchool>(_context);
+			this._facultyCourseRepo = new GenericRepository<FacultyCourse>(_context);
+			this._mapper = MapperConfig.InitializeAutomapper();
+		}
 
-		public List<CourseIdNameDto> GetFacultyCourses(long facultyId)
+		public List<FacultyCoursesDto> GetFacultyCourses(long facultyId)
 		{
-			List<CourseIdNameDto> facultyCourses = (from fc in _context.FacultyCourses
+			List<FacultyCoursesDto> facultyCourses = (from fc in _context.FacultyCourses
 			join c in _context.Courses on fc.IdCourse equals c.IdCourse
 			where fc.IdUser == facultyId
-			select new CourseIdNameDto
+			select new FacultyCoursesDto
 			{
-				CourseId = c.IdCourse,
-				CourseName = c.Name
+				IdUser = fc.IdUser,
+				IdCourse = c.IdCourse,
+				Name = c.Name
 			}).ToList();
 
 			return facultyCourses;
 		}
+		
+		public List<FacultyCoursesDto> GetFacultyManagedCourses(long facultyId)
+		{
+			List<FacultyCoursesDto> facultyCourses = (from fmc in _context.FacultyManagedCourses
+			join c in _context.Courses on fmc.IdCourse equals c.IdCourse
+			where fmc.IdUser == facultyId
+			select new FacultyCoursesDto
+			{
+				IdUser = fmc.IdUser,
+				IdCourse = c.IdCourse,
+				Name = c.Name
+			}).ToList();
 
-		public  IReadOnlyList<FacultyLawSchool> GetFacultyLawSchools(long IdUser)
+			return facultyCourses;
+		}
+		
+		public  IReadOnlyList<FacultyLawSchoolsDto> GetFacultyLawSchools(long IdUser)
 		{
 			var facultyLawSchoolsSpec = new FacultyLawSchoolsSpecification(IdUser);
 			IReadOnlyList<FacultyLawSchool> facultyLawSchools = _facultyLawSchoolRepo.ListAsync(facultyLawSchoolsSpec).Result;
-			return facultyLawSchools;
+			return _mapper.Map<List<FacultyLawSchoolsDto>>(facultyLawSchools);
+			// return facultyLawSchools;
 		}
 
 	}

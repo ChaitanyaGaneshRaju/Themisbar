@@ -18,20 +18,29 @@ namespace API.Controllers
 		}
 
 		[HttpGet("GetCourses/{facultyId}")] 
-		public async Task<ActionResult<List<CourseIdNameDto>>> GetCourses(long facultyId)
+		public async Task<ActionResult<IReadOnlyList<FacultyCoursesDto>>> GetCourses(long facultyId)
 		{
 			FacultyDao fd = new();
-			List<CourseIdNameDto> courses = await System.Threading.Tasks.Task.FromResult(fd.GetFacultyCourses(facultyId));
+			IReadOnlyList<FacultyCoursesDto> courses = await System.Threading.Tasks.Task.FromResult(fd.GetFacultyCourses(facultyId));
+
+			return Ok(courses);
+		}
+		
+		[HttpGet("GetManagedCourses/{facultyId}")] 
+		public async Task<ActionResult<IReadOnlyList<FacultyCoursesDto>>> GetManagedCourses(long facultyId)
+		{
+			FacultyDao fd = new();
+			IReadOnlyList<FacultyCoursesDto> courses = await System.Threading.Tasks.Task.FromResult(fd.GetFacultyManagedCourses(facultyId));
 
 			return Ok(courses);
 		}
 		
 		
 		[HttpGet("GetLawSchools/{IdUser}")] 
-		public async Task<ActionResult<IReadOnlyList<FacultyLawSchool>>> GetLawSchools(long IdUser)
+		public async Task<ActionResult<IReadOnlyList<FacultyLawSchoolsDto>>> GetLawSchools(long IdUser)
 		{
 			FacultyDao fd = new();
-			IReadOnlyList<FacultyLawSchool> courses = await System.Threading.Tasks.Task.FromResult(fd.GetFacultyLawSchools(IdUser));
+			IReadOnlyList<FacultyLawSchoolsDto> courses = await System.Threading.Tasks.Task.FromResult(fd.GetFacultyLawSchools(IdUser));
 
 			return Ok(courses);
 		}
