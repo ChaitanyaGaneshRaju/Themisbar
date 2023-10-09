@@ -30,9 +30,18 @@ namespace API.Controllers
 		public async Task<ActionResult<IReadOnlyList<FacultyCoursesDto>>> GetManagedCourses(long facultyId)
 		{
 			FacultyDao fd = new();
-			IReadOnlyList<FacultyCoursesDto> courses = await System.Threading.Tasks.Task.FromResult(fd.GetFacultyManagedCourses(facultyId));
+			IReadOnlyList<FacultyCoursesDto> managedCourses = await System.Threading.Tasks.Task.FromResult(fd.GetFacultyManagedCourses(facultyId));
 
-			return Ok(courses);
+			return Ok(managedCourses);
+		}
+		
+		[HttpGet("GetUserDetails/{facultyId}")] 
+		public async Task<ActionResult<IReadOnlyList<FacultyUserDetails>>> GetFacultyUserDetails(long facultyId)
+		{
+			FacultyDao fd = new();
+			FacultyUserDetails facultyUserDetails = await System.Threading.Tasks.Task.FromResult(fd.GetFacultyUserDetails(facultyId));
+
+			return Ok(facultyUserDetails);
 		}
 		
 		

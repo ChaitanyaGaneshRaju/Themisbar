@@ -11,12 +11,21 @@ namespace Core.DTO
 		public long IdCourse { get; set; }
 		public string Name { get; set; }
 	}
-	
+
 	public class FacultyLawSchoolsDto
 	{
 		public long IdUser { get; set; }
 		public long IdLawSchool { get; set; }
 		public string Name { get; set; }
 	}
-	
+
+	public class FacultyUserDetails
+	{
+		public long IdUser { get; set; }
+		public string LastName { get; set; }
+		public string FirstName { get; set; }
+		public string Email { get; set; }
+		public string HomePhone { get; set; }
+	}
+
 }

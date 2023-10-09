@@ -41,7 +41,7 @@ namespace API.DAO
 		
 		public List<FacultyCoursesDto> GetFacultyManagedCourses(long facultyId)
 		{
-			List<FacultyCoursesDto> facultyCourses = (from fmc in _context.FacultyManagedCourses
+			List<FacultyCoursesDto> facultyManagedCourses = (from fmc in _context.FacultyManagedCourses
 			join c in _context.Courses on fmc.IdCourse equals c.IdCourse
 			where fmc.IdUser == facultyId
 			select new FacultyCoursesDto
@@ -51,7 +51,24 @@ namespace API.DAO
 				Name = c.Name
 			}).ToList();
 
-			return facultyCourses;
+			return facultyManagedCourses;
+		}
+		
+		public FacultyUserDetails GetFacultyUserDetails(long facultyId)
+		{
+			FacultyUserDetails FacultyUserDetails = (from f in _context.Faculties
+			join u in _context.Users on f.IdUser equals u.IdUser
+			where f.IdUser == facultyId
+			select new FacultyUserDetails
+			{
+				IdUser = f.IdUser,
+				LastName = u.LastName,
+				FirstName = u.FirstName,
+				Email = u.Email,
+				HomePhone = u.HomePhone 
+			}).FirstOrDefault();
+
+			return FacultyUserDetails;
 		}
 		
 		public  IReadOnlyList<FacultyLawSchoolsDto> GetFacultyLawSchools(long IdUser)
@@ -61,6 +78,8 @@ namespace API.DAO
 			return _mapper.Map<List<FacultyLawSchoolsDto>>(facultyLawSchools);
 			// return facultyLawSchools;
 		}
+		
+		
 
 	}
 }
