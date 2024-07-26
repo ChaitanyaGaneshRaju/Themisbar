@@ -13,14 +13,12 @@ namespace API.DAO
 	{
 		private readonly DataContext _context;
 		private readonly GenericRepository<FacultyLawSchool> _facultyLawSchoolRepo;
-		private readonly GenericRepository<FacultyCourse> _facultyCourseRepo;
 		private readonly Mapper _mapper;
 
 		public FacultyDao()
 		{
 			this._context = new DataContext();
 			this._facultyLawSchoolRepo = new GenericRepository<FacultyLawSchool>(_context);
-			this._facultyCourseRepo = new GenericRepository<FacultyCourse>(_context);
 			this._mapper = MapperConfig.InitializeAutomapper();
 		}
 
@@ -78,6 +76,7 @@ namespace API.DAO
 			return _mapper.Map<List<FacultyLawSchoolsDto>>(facultyLawSchools);
 			// return facultyLawSchools;
 		}
+		
 		
 		
 

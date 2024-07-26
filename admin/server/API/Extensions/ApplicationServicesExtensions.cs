@@ -1,4 +1,5 @@
 using API.Errors;
+using API.Factories;
 using API.Services;
 using Core.Interfaces;
 using Infrastructure.Data;
@@ -15,6 +16,7 @@ namespace API.Extensions
 			// Add services to the container.
 			services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
 			services.AddScoped<ITokenService, TokenService>();
+			services.AddScoped<PerformanceReportFactory>();
 			
 			services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 

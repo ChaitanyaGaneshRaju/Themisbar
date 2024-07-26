@@ -12,8 +12,10 @@ import { PageNotFoundComponent } from './components/generic/page-not-found/page-
 import { MyProfileComponent } from './components/faculty/my-profile/my-profile.component';
 import { IndividualViewDetailComponent } from './components/faculty/individual-view-wrapper/individual-view-detail/individual-view-detail.component';
 import { IndividualViewWrapperComponent } from './components/faculty/individual-view-wrapper/individual-view-wrapper.component';
+import { HomePageComponent } from './components/guest-pages/home-page/home-page.component';
 
 const routes: Routes = [
+  { path: '', component: HomePageComponent},
   { path: 'login', component: FacultyLoginComponent },
   {
     path: 'faculty/:courseId',

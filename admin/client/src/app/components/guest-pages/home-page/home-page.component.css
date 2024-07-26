@@ -1,0 +1,260 @@
+.home-page-container-1{
+  background-color: #1b2a32;
+}
+
+.home-page-container-1 .moto{
+  padding: 15px 0 50px 0;
+}
+
+.home-page-container-2{
+  padding: 50px 0 50px 0;
+  background-color: #224d63;
+}
+
+.home-page-container-2 .table th{
+  background-color: #224d63;
+}
+
+.home-page-container-2 .table tr td:nth-child(1){
+  text-align: left;
+}
+
+.home-page-container-3{
+  padding: 50px 0 50px 0;
+  background-color: #1b2a32;
+}
+
+.home-page-container-4{
+  padding: 50px 0 50px 0;
+  background: radial-gradient(circle at right,rgba(176,173,35,1), #224d63,  #1b2a32);
+}
+
+.home-page-container-5{
+  padding: 50px 0 50px 0;
+  background-color: #1b2a32;
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
+}
+
+.home-page-header{
+  background-color: #1b2a32;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.home-page-header-branding{
+  padding: 0;
+}
+
+header .header-nav .nav-link:first-of-type::before, header .header-nav .nav-link:last-of-type::after, .header .header-nav .nav-link:first-of-type::before, .header .header-nav .nav-link:last-of-type::after {
+ background-color: transparent;
+}
+
+.home-page-header-nav a{
+  padding: 18px 15px;
+}
+
+.home-page-header-nav-buttons a{
+  padding: 18px 10px;
+}
+
+.home-page-header-nav-buttons span{
+  margin: 0 !important;
+}
+
+.home-page-logo{
+  object-fit: contain;
+  max-width:150%;
+  max-height:150%;
+  background-color: #223e4e;
+}
+
+.btn-enroll{
+  background-color: #F89F02 !important;
+  border-color: #F89F02 !important;
+  color: #fff !important;
+}
+
+.moto{
+  text-wrap: wrap;
+}
+
+.moto .moto-header{
+  font-size: 3em !important;
+  font-weight: bolder;
+  line-height: 1em !important;
+}
+
+.moto .moto-sub-header{
+  margin-top: 0 !important;
+}
+
+.services-list h4{
+  text-decoration: underline;
+}
+
+.three-div-banners{
+  display: flex;
+  flex-direction: row;
+  column-gap: 2em;
+}
+
+.secondary-banners{
+  display: flex;
+  flex-direction: column;
+  row-gap: 2em;
+}
+
+.primary-banner{
+  width: 750px;
+  background-color: #223e4e;
+  padding: 30px !important;
+  border-radius: 0.5em;
+  background-size:cover;
+  background-position:15% 10%;
+  background-repeat: no-repeat;
+  background-image: url(https://www.jetbrains.com/img/banners-home-page/ai-banner.svg);
+}
+
+.primary-banner-image{
+  object-fit: contain;
+  max-width:50%;
+  max-height:50%;
+}
+
+.primary-banner-sub-header{
+  margin-top: 0;
+}
+
+.secondary-banner-1{
+  padding: 30px !important;
+  background-color: #ff833c;
+  background-image: linear-gradient(225deg, #b1a00a 0%, #6f12c1 50%, #7e5e18 100%);
+  border-radius: 0.5em;
+}
+
+.secondary-banner-2{
+  padding: 30px !important;
+  background:conic-gradient(from 130deg at 1px 1px,#00000000 330deg,rgb(39, 39, 39) 0)0 0/50px 50px;
+  background-color: rgb(29, 29, 29);
+  border-radius: 0.5em;
+}
+
+.no-padding{
+  padding: 0 !important;
+}
+
+.no-margin{
+  margin: 0;
+}
+
+.pricing-banner{
+  border-radius: 0.5em;
+    /* position: sticky; */
+    bottom: 0;
+    padding: 10px;
+    padding-left: 24px;
+}
+
+.pricing-banner-header{
+  color:rgb(238, 223, 7);
+}
+
+
+.pricing-page-link{
+  font-style: bolder;
+  text-decoration: underline;
+  color:rgb(238, 223, 7);
+}
+
+
+
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.logos {
+  overflow: hidden;
+  padding: 20px 0;
+  white-space: nowrap;
+  position: relative;
+}
+
+.logos:before,
+.logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.logos:before {
+  left: 0;
+  background: linear-gradient(to left, rgba(27, 42, 50, 0),  rgba(27, 42, 50),  rgba(27, 42, 50));
+}
+
+.logos:after {
+  right: 0;
+  background: linear-gradient(to left, rgba(27, 42, 50),  rgba(27, 42, 50),  rgba(27, 42, 50, 0));
+}
+
+.logos:hover .logos-slide {
+  animation-play-state: paused;
+}
+
+.logos-slide {
+  display: inline-block;
+  animation: 35s slide infinite linear;
+}
+
+.logos-slide img {
+  height: 30px;
+  margin: 0 30px;
+}
+
+/*
+.themis-conf-header,.themis-conf{
+  text-align: center;
+}
+ */
+
+ @keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+
+
+.footer-row-1, .jurisdictions-row{
+  display: flex;
+  justify-content: space-between;
+  gap: 3em;
+}

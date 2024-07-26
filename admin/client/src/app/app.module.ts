@@ -10,11 +10,13 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { AutofocusDirective } from './directives/autofocus.directive';
 import { LoadingInterceptor } from './interceptors/loading.interceptor';
 import { AuthInterceptor } from './interceptors/auth.interceptor';
+import { HomePageComponent } from './components/guest-pages/home-page/home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AutofocusDirective,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,
